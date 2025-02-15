@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss/ --output  src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,13 +23,22 @@
   },
   "homepage": "https://github.com/tempo1406/NodeJS-Blog#readme",
   "description": "",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": [
+      "prettier --single-quote --trailing-comma all --tab-width 4 --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "node-sass": "^9.0.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.1"
   }
 }
