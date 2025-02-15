@@ -24,10 +24,7 @@
   "homepage": "https://github.com/tempo1406/NodeJS-Blog#readme",
   "description": "",
   "lint-staged": {
-    "src/**/*.{js,json,scss}": [
-      "prettier --single-quote --trailing-comma all --tab-width 4 --write",
-      "git add"
-    ]
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "husky": {
     "hooks": {
